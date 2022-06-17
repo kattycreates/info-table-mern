@@ -18,10 +18,10 @@ const ModalForm = ({setShow,name,setName,phone,setPhone,email,setEmail,hobbies,s
    try{
     setError(false);
     if(edit){
-      user=await axios.put(`/api/users/${id}`,newData);
+      user=await axios.put(`https://infotable.herokuapp.com/api/users/${id}`,newData);
     }
     else{
-      user=await axios.post('/api/users/',newData);
+      user=await axios.post('https://infotable.herokuapp.com/api/users/',newData);
     }
     setName('');
     setPhone('');
