@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, "client", "build")))
 
 // ...
 // Right before your app.listen(), add this:
-app.get('/api', (req, res, next) => {
+app.get('/', (req, res, next) => {
     res.sendFile('./public/index.html', { root: __dirname });
 });
 
