@@ -38,17 +38,7 @@ const ModalForm = ({setShow,name,setName,phone,setPhone,email,setEmail,hobbies,s
     setMessage(error);
     console.log('error',error)
    }
-   /*if(error===false){
-    console.log('user',user);
-    setName('');
-    setPhone('');
-    setEmail('');
-    setHobbies('');
-    setId('')
-    setShow(false);
-    setEdit(false);
-    //window.location.reload(false);
-  }*/
+
     
     
   }
@@ -90,35 +80,3 @@ const ModalForm = ({setShow,name,setName,phone,setPhone,email,setEmail,hobbies,s
 export default ModalForm
 
 
-/*
- const nameRef=useRef();
- const phoneRef=useRef();
- const emailRef=useRef();
- const hobbiesRef=useRef();
-let newData={
-      name:nameRef.current.value,phone:phoneRef.current.value,email:emailRef.current.value,
-      hobbies:hobbiesRef.current.value.split(',')
-    };
-
-    return (
-    <div className='modal-form'>
-      <div className='form'>
-        {error&&<div className='error-div'>{message.response.data.error}</div>}
-        <span className='close' onClick={handleClose}>x</span>
-        <form onSubmit={handleSubmit}>
-              <label htmlFor='name'>Name</label>
-              <input type='text' id='name' ref={nameRef} required />
-              <label htmlFor='phone'>Phone number</label>
-              <input type='tel' id='phone' ref={phoneRef}  required />
-              <label htmlFor='email'>Email</label>
-              <input type='email' id='email' ref={emailRef}  required />
-              <label htmlFor='hobbies'>Hobbies</label>
-              <input type='text' id='hobbies' ref={hobbiesRef}  required />
-              <button type='submit' className='submit'>{edit?"Update":"Submit"}</button>
-          </form>
-      </div>
-        
-    </div>
-  )
-  */
-  

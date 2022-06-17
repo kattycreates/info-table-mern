@@ -22,8 +22,6 @@ app.use(middleware.errorHandler);
 
 app.use(express.static(path.join(__dirname, "client", "build")))
 
-// ...
-// Right before your app.listen(), add this:
 app.get('/', (req, res, next) => {
     res.sendFile('./public/index.html', { root: __dirname });
 });
