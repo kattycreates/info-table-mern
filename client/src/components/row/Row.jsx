@@ -14,7 +14,7 @@ const Row = ({user,handleUpdate,selected,setSelected}) => {
   const handleDelete=async(e)=>{
     e.preventDefault();
     if(window.confirm("Delete data permanently?")){
-      let url=`http://localhost:5000/api/users/${user.id}`;
+      let url=`/api/users/${user.id}`;
       let deletedData=axios.delete(url);
       console.log('deleted data',deletedData.data);
       window.location.reload(false);

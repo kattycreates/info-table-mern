@@ -18,10 +18,10 @@ const ModalForm = ({setShow,name,setName,phone,setPhone,email,setEmail,hobbies,s
    try{
     setError(false);
     if(edit){
-      user=await axios.put(`http://localhost:5000/api/users/${id}`,newData);
+      user=await axios.put(`/api/users/${id}`,newData);
     }
     else{
-      user=await axios.post('http://localhost:5000/api/users/',newData);
+      user=await axios.post('/api/users/',newData);
     }
     setName('');
     setPhone('');
