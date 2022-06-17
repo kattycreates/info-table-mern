@@ -17,7 +17,7 @@ function App() {
   const [showAlert,setShowAlert]=useState(false);
   const [alertMessage,setAlertMessage]=useState('');
  
-
+  //const base='http://localhost:5000/api/users/';
   const handleSort=useCallback((allData)=>{
     //e.preventDefault();
     let sortedData=allData;
@@ -45,7 +45,7 @@ function App() {
 
   useEffect(()=>{
     const getData=async()=>{
-      let userData=await axios.get('http://localhost:5000/api/users/');
+      let userData=await axios.get('/api/users/');
       let sortedData=handleSort(userData.data);
      
       setData(sortedData);
@@ -72,7 +72,7 @@ function App() {
     if(selected.length!==0){
       if(window.confirm("Send data to info@redpositive.in?")){
         try{
-          let response=await axios.post('http://localhost:5000/api/users/send',{data:selected});
+          let response=await axios.post('/api/users/send',{data:selected});
           setShowAlert(true);
           setAlertMessage('Mail has been successfully sent!');
           console.log(response);
