@@ -17,7 +17,7 @@ mongoose.connect(process.env.MONGO_URI,{
 }).then(console.log("connected")).catch(err=>console.log(err));
 
 app.use('/api/users',userRoute);
-app.use(middleware.unknownEndpoint);
+//app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
 
 app.use(express.static('build'));
