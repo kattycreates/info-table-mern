@@ -14,7 +14,7 @@ const Row = ({user,handleUpdate,selected,setSelected}) => {
   const handleDelete=async(e)=>{
     e.preventDefault();
     if(window.confirm("Delete data permanently?")){
-      let url=`https://infotable.herokuapp.com/api/users/${user.id}`;
+      let url=`http://localhost:5000/api/users/${user.id}`;
       let deletedData=axios.delete(url);
       console.log('deleted data',deletedData.data);
       window.location.reload(false);

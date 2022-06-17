@@ -45,7 +45,7 @@ function App() {
 
   useEffect(()=>{
     const getData=async()=>{
-      let userData=await axios.get('https://infotable.herokuapp.com/api/users/');
+      let userData=await axios.get('http://localhost:5000/api/users/');
       let sortedData=handleSort(userData.data);
      
       setData(sortedData);
@@ -72,7 +72,7 @@ function App() {
     if(selected.length!==0){
       if(window.confirm("Send data to info@redpositive.in?")){
         try{
-          let response=await axios.post('https://infotable.herokuapp.com/api/users/send',{data:selected});
+          let response=await axios.post('http://localhost:5000/api/users/send',{data:selected});
           setShowAlert(true);
           setAlertMessage('Mail has been successfully sent!');
           console.log(response);
@@ -117,10 +117,12 @@ function App() {
       </div>
       <div className='wrapper'>
         <table>
-          <tbody>
+          <thead>
             <tr>
               {headings.map((heading,i)=><th key={i}>{heading}</th>)}
             </tr>
+          </thead>
+          <tbody>
             {data.map((user,i)=><Row key={i} user={user} handleUpdate={handleUpdate} selected={selected} setSelected={setSelected} />)}
           </tbody>
           
