@@ -1,0 +1,42 @@
+th{
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+tr{
+    font-family: 'Mukta', sans-serif;
+    font-size: 18px;
+}
+.check{
+    width: 20px;
+    height: 20px;
+}
+.row:nth-child(odd){
+    background-color: var(--secondary-color);
+}
+.row:nth-child(even){
+    background-color: var(--tertiary-color);
+}
+
+.icon-div{
+    
+    text-align: center;
+}
+.icons{
+    margin: 0 10px;
+   transition: all 0.3s ease;
+}
+
+.row:nth-child(odd) .icons:hover{
+    color: var(--tertiary-color);
+    transform: scale(1.5);
+}
+.row:nth-child(even) .icons:hover{
+    color: var(--secondary-color);
+    transform: scale(1.5);
+}
+th{
+    background-color: var(--primary-color);
+    color:var(--tertiary-color);
+    
+    
+}
