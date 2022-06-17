@@ -20,9 +20,12 @@ app.use('/api/users',userRoute);
 //app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
 
-app.use(express.static('build'));
-app.get('*', (req, res) => {
-    res.sendFile(path.join('build', 'index.html'));
-  });
+app.use(express.static(path.join(__dirname, "client", "build")))
+
+// ...
+// Right before your app.listen(), add this:
+app.get('/api', (req, res, next) => {
+    res.sendFile('./public/index.html', { root: __dirname });
+});
 
 app.listen(process.env.PORT||5000,()=>console.log(`listening on port ${process.env.PORT||5000}`));
