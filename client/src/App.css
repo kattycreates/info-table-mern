@@ -10,7 +10,7 @@ body{
     padding: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url('https://github.com/kattycreates/info-table-mern/blob/main/client/src/assets/pattern1.jpg');
+    background-image: url('./assets/pattern1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 
